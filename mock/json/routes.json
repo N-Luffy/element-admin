@@ -1,0 +1,223 @@
+[{
+  "path": "/",
+  "component": "layout/Layout",
+  "redirect": "/Home",
+  "children": [{
+    "path": "Home",
+    "component": "views/home/index",
+    "name": "Home",
+    "meta": {
+      "title": "首页",
+      "icon": "dashboard",
+      "affix": true
+    }
+  }]
+},
+  {
+    "path": "/redirect",
+    "component": "layout/Layout",
+    "hidden": true,
+    "children": [{
+      "path": "/redirect/:path*",
+      "component": "views/redirect/index"
+    }]
+  },
+  {
+    "path": "/404",
+    "component": "views/error-page/404",
+    "hidden": true
+  },
+  {
+    "path": "/401",
+    "component": "views/error-page/401",
+    "hidden": true
+  },
+  {
+    "path": "/login",
+    "component": "views/login/index",
+    "hidden": true
+  },
+  {
+    "path": "/locking",
+    "name": "locking",
+    "component": "components/LockScreen/components/locking-page",
+    "hidden": true
+  },
+  {
+    "path": "/permission",
+    "component": "layout/Layout",
+    "redirect": "/permission/role",
+    "alwaysShow": true,
+    "name": "Permission",
+    "meta": {
+      "title": "权限测试页",
+      "icon": "lock",
+      "roles": ["Permission"]
+    },
+    "children": [{
+      "path": "page",
+      "component": "views/permission/page",
+      "name": "PagePermission",
+      "meta": {
+        "title": "页面权限",
+        "roles": ["PagePermission"]
+      }
+    },
+      {
+        "path": "role",
+        "component": "views/permission/role",
+        "name": "RolePermission",
+        "meta": {
+          "title": "角色权限",
+          "roles": ["RolePermission"]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/icon",
+    "component": "layout/Layout",
+    "redirect": "/icon/index",
+    "children": [{
+      "path": "index",
+      "component": "views/icons/index",
+      "name": "Icons",
+      "meta": {
+        "title": "图标",
+        "icon": "icon",
+        "noCache": true,
+        "roles": ["Icons"]
+      }
+    }]
+  },
+  {
+    "path": "/nested",
+    "component": "layout/Layout",
+    "redirect": "/nested/menu1/menu1-1",
+    "name": "Nested",
+    "meta": {
+      "title": "路由嵌套",
+      "icon": "nested",
+      "roles": ["Nested"]
+    },
+    "children": [{
+      "path": "menu1",
+      "component": "views/nested/menu1/index",
+      "name": "Menu1",
+      "meta": {
+        "title": "菜单1",
+        "roles": ["Menu1"]
+      },
+      "redirect": "/nested/menu1/menu1-1",
+      "children": [{
+        "path": "menu1-1",
+        "component": "views/nested/menu1/menu1-1",
+        "name": "Menu1-1",
+        "meta": {
+          "title": "菜单1-1",
+          "roles": ["Menu1-1"]
+        }
+      },
+        {
+          "path": "menu1-2",
+          "component": "views/nested/menu1/menu1-2",
+          "name": "Menu1-2",
+          "redirect": "/nested/menu1/menu1-2/menu1-2-1",
+          "meta": {
+            "title": "菜单1-2",
+            "roles": ["Menu1-2"]
+          },
+          "children": [{
+            "path": "menu1-2-1",
+            "component": "views/nested/menu1/menu1-2/menu1-2-1",
+            "name": "Menu1-2-1",
+            "meta": {
+              "title": "菜单1-2-1",
+              "roles": ["Menu1-2-1"]
+            }
+          },
+            {
+              "path": "menu1-2-2",
+              "component": "views/nested/menu1/menu1-2/menu1-2-2",
+              "name": "Menu1-2-2",
+              "meta": {
+                "title": "菜单1-2-2",
+                "roles": ["Menu1-2-2"]
+              }
+            }
+          ]
+        },
+        {
+          "path": "menu1-3",
+          "component": "views/nested/menu1/menu1-3",
+          "name": "Menu1-3",
+          "meta": {
+            "title": "菜单1-3",
+            "roles": ["Menu1-3"]
+          }
+        }
+      ]
+    },
+      {
+        "path": "menu2",
+        "name": "Menu2",
+        "component": "views/nested/menu2/index",
+        "meta": {
+          "title": "菜单2",
+          "roles": ["Menu2"]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/error",
+    "component": "layout/Layout",
+    "redirect": "noRedirect",
+    "name": "ErrorPages",
+    "meta": {
+      "title": "错误页面",
+      "icon": "404",
+      "roles": ["ErrorPages"]
+    },
+    "children": [{
+      "path": "401",
+      "component": "views/error-page/401",
+      "name": "Page401",
+      "meta": {
+        "title": "401",
+        "noCache": true,
+        "roles": ["Page401"]
+      }
+    },
+      {
+        "path": "404",
+        "component": "views/error-page/404",
+        "name": "Page404",
+        "meta": {
+          "title": "404",
+          "noCache": true,
+          "roles": ["Page404"]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/error-log",
+    "component": "layout/Layout",
+    "children": [{
+      "path": "log",
+      "component": "views/error-log/index",
+      "name": "ErrorLog",
+      "meta": {
+        "title": "日志",
+        "icon": "bug",
+        "roles": ["ErrorLog"]
+      }
+    }]
+  },
+  {
+    "path": "*",
+    "redirect": "/404",
+    "hidden": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "admin-token": {
+    "administrator": true,
+    "roles": [],
+    "introduction": "I am a super administrator",
+    "avatar": "../../static/img/user.jpg",
+    "name": "超级管理员"
+  },
+  "zhangsan-token": {
+    "administrator": false,
+    "roles": [ "Permission","RolePermission"],
+    "introduction": "I am an editor",
+    "avatar": "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+    "name": "张三"
+  }
+}
