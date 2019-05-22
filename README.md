@@ -34,7 +34,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 > 项目说明
 
 ## 简介
-element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现，参考<a href="https://github.com/PanJiaChen/vue-element-admin">PanJiaChen的vue-element-admin项目</a>所写的一个后台程序，干净简洁，能够快速快发添加自己需要的业务模块。
+element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现，参考<a href="https://github.com/PanJiaChen/vue-element-admin">PanJiaChen的vue-element-admin项目</a>所写的一个后台程序，干净简洁，能够快速开发添加自己需要的业务模块。
 
 
 
